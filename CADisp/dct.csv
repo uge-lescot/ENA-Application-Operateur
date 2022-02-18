@@ -1,0 +1,120 @@
+"[datetime.datetime(2021, 9, 16, 16, 54, 45, 251911), 'click', 'Bien gere']"
+"[datetime.datetime(2021, 9, 16, 16, 59, 1, 652584), 'click', 'Bien gere']"
+"[datetime.datetime(2021, 9, 16, 16, 59, 2, 589275), 'click', 'Bien gere']"
+"[datetime.datetime(2021, 9, 16, 16, 59, 3, 82342), 'click', 'Bien gere']"
+"[datetime.datetime(2021, 9, 16, 16, 59, 3, 412999), 'click', 'Bien gere']"
+"[datetime.datetime(2021, 9, 16, 16, 59, 4, 203404), 'click', 'Bien gere']"
+2021-09-16 17:39:27.275844,click,Bien gere
+2021-09-16 17:39:29.998404,click,Bien gere
+2021-09-16 17:39:30.465995,click,Bien gere
+2021-09-16 17:39:30.846091,click,Bien gere
+2021-09-16 17:39:31.176291,click,Bien gere
+2021-09-16 17:39:31.480712,click,Bien gere
+08:13:18.939044,click,Bien gere
+08:13:20.719522,click,Bien gere
+09:49:36.340964,click,
+09:49:37.194827,click,
+09:49:37.549511,click,
+09:49:37.739653,click,
+09:49:37.905276,click,
+09:49:38.202648,click,
+10:05:44.634498,click,
+10:05:45.230593,click,
+10:05:45.504107,click,
+10:05:45.727318,click,
+10:05:45.910914,click,
+10:05:46.106163,click,
+10:07:15.502601,click,
+10:07:15.896568,click,
+10:07:16.079663,click,
+10:07:16.237731,click,
+10:07:38.151477,click,
+10:07:38.633260,click,
+10:07:38.904317,click,
+10:12:05.341872,click,
+10:12:06.053277,click,
+10:14:58.059725,click,
+10:15:21.944154,click,
+10:22:35.067841,click,donnee
+10:22:35.622886,click,donnee
+10:22:35.796216,click,donnee
+10:22:35.956696,click,donnee
+10:24:37.027975,click,donnee
+10:24:37.855658,click,donnee
+10:24:38.060245,click,donnee
+10:36:59.957937,click,donnee
+10:37:00.707979,click,donnee
+10:37:00.884024,click,donnee
+10:37:01.042874,click,donnee
+10:37:18.325418,click,Bien gere
+10:37:18.474816,click,Bien gere
+10:37:18.665997,click,Bien gere
+10:37:18.842999,click,Bien gere
+10:44:24.729854,click,Autre
+10:44:24.937483,click,Autre
+10:44:25.111116,click,Autre
+10:44:25.302003,click,Autre
+10:44:25.483896,click,Autre
+10:44:40.234036,click,Autre
+11:28:40.830836,click,<PyQt5.QtGui.QMouseEvent object at 0x00000148DF489040>
+11:28:41.761965,click,<PyQt5.QtGui.QMouseEvent object at 0x00000148DF489040>
+11:28:41.951815,click,<PyQt5.QtGui.QMouseEvent object at 0x00000148DF489040>
+11:29:28.352645,click,<PyQt5.QtGui.QMouseEvent object at 0x000002070CFB9040>
+11:29:28.750789,click,<PyQt5.QtGui.QMouseEvent object at 0x000002070CFB9040>
+11:29:28.894992,click,<PyQt5.QtGui.QMouseEvent object at 0x000002070CFB9040>
+11:30:43.977445,click,<PyQt5.QtGui.QMouseEvent object at 0x00000183DA869040>
+11:30:44.414297,click,<PyQt5.QtGui.QMouseEvent object at 0x00000183DA869040>
+11:30:57.239645,click,<PyQt5.QtGui.QMouseEvent object at 0x0000013C0C9A9040>
+11:32:03.232705,click,<PyQt5.QtGui.QMouseEvent object at 0x000001B6F61F9040>
+11:32:03.742576,click,<PyQt5.QtGui.QMouseEvent object at 0x000001B6F61F9040>
+11:32:03.944765,click,<PyQt5.QtGui.QMouseEvent object at 0x000001B6F61F9040>
+11:32:43.317385,click,<PyQt5.QtGui.QMouseEvent object at 0x000001C5AA9F9040>
+11:32:43.646856,click,<PyQt5.QtGui.QMouseEvent object at 0x000001C5AA9F9040>
+11:33:20.369806,click,<PyQt5.QtGui.QMouseEvent object at 0x0000016DB9729040>
+11:33:20.832540,click,<PyQt5.QtGui.QMouseEvent object at 0x0000016DB9729040>
+11:39:59.286020,click,<PyQt5.QtGui.QMouseEvent object at 0x00000204EA9E21F0>
+11:40:00.089283,click,<PyQt5.QtGui.QMouseEvent object at 0x00000204EA9E21F0>
+11:40:00.280193,click,<PyQt5.QtGui.QMouseEvent object at 0x00000204EA9E21F0>
+11:41:45.223978,click,<PyQt5.QtGui.QMouseEvent object at 0x00000129213E21F0>
+11:41:45.646716,click,<PyQt5.QtGui.QMouseEvent object at 0x00000129213E21F0>
+11:43:41.735876,click,<PyQt5.QtGui.QMouseEvent object at 0x000002A3E47B21F0>
+11:43:42.604096,click,<PyQt5.QtGui.QMouseEvent object at 0x000002A3E47B21F0>
+11:50:46.491630,click,<PyQt5.QtGui.QMouseEvent object at 0x0000015DC00321F0>
+11:51:03.917300,click,<PyQt5.QtGui.QMouseEvent object at 0x000001C0B9A721F0>
+11:51:24.045778,click,<PyQt5.QtGui.QMouseEvent object at 0x000001C123EF11F0>
+11:54:59.467364,click,<PyQt5.QtGui.QMouseEvent object at 0x000001A02D3F21F0>
+11:55:38.900998,click,<PyQt5.QtGui.QMouseEvent object at 0x00000215EB1021F0>
+11:55:39.609079,click,<PyQt5.QtGui.QMouseEvent object at 0x00000215EB1021F0>
+11:58:20.990920,click,Bien gere
+11:58:21.645502,click,Bien gere
+12:01:08.900817,click,Autre
+12:01:09.693287,click,Animal
+12:01:10.403944,click,Bien gere
+12:14:09.614956,click,Animal
+12:14:10.339819,click,Animal
+12:14:11.596725,click,Autre
+12:14:11.898414,click,Autre
+12:14:12.581882,click,Embouteillage
+12:14:12.881864,click,Embouteillage
+12:14:13.502378,click,Vegetation
+12:14:13.754325,click,Vegetation
+13:21:00.383060,click,Embouteillage
+13:21:01.213976,click,Embouteillage
+13:21:01.427018,click,Embouteillage
+13:21:01.622032,click,Embouteillage
+13:21:01.803868,click,Embouteillage
+13:21:02.025866,click,Embouteillage
+13:21:02.236795,click,Embouteillage
+13:21:02.491036,click,Embouteillage
+13:21:02.690628,click,Embouteillage
+13:21:02.890061,click,Embouteillage
+13:21:03.115085,click,Embouteillage
+13:21:03.325735,click,Embouteillage
+13:21:03.531521,click,Embouteillage
+13:36:12.367473,click,Autre
+13:36:12.842551,click,Animal
+13:36:13.402607,click,Intemperies
+13:36:13.840512,click,Embouteillage
+13:36:14.386145,click,Vegetation
+13:36:14.769975,click,Travaux
+14:01:32.418933,click,Rabattement

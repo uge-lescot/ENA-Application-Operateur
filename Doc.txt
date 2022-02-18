@@ -1,0 +1,16 @@
+    #mettre le venv dans le projet (venv = virtual environment)
+    #il y a fichier requirement avec le nom des librairies à telecharger
+
+    #ouvrir un invit de commande
+    # dossier C:\Users\rtag\Desktop\CadipToAppliOp\venv\Scripts
+    cd /dossier/venv/Script/activate
+    il nous retourne le prompt en commençant par (venv)
+    exemple : (venv) C:\Users\rtag\Desktop\CadipToAppliOp\venv\Scripts
+
+    #installer les librairies:
+    py -m pip install -r requirements.txt
+    affichage dans l'invit de commande : (venv) C:\Users\rtag\Desktop\CadipToAppliOp\CADisp>py -m pip install -r requirements.txt
+
+    #lancer le programme
+    py main_server.py
+    affichage dans l'invit de commande : (venv) C:\Users\rtag\Desktop\CadipToAppliOp\CADisp>py main_server.py
