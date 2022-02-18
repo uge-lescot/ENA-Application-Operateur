@@ -1,7 +1,7 @@
 import logging as log
 import sys
-if r"C:\Users\rtag\AppData\Local\Programs\Python\Python39" not in sys.path :
-    sys.path.append(r"C:\Users\rtag\AppData\Local\Programs\Python\Python39")
+if r"C:\Users\ena\AppData\Local\Programs\Python\Python39" not in sys.path :
+    sys.path.append(r"C:\Users\ena\AppData\Local\Programs\Python\Python39")
 
 
 from sys import argv
