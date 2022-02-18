@@ -68,8 +68,10 @@ class Dashboard(QtWidgets.QMainWindow):
         self._QLabelimagePlus = (str(pictures_folder / "plus.PNG"))
         self._QLabelimageMoins = (str(pictures_folder / "moins.PNG"))
 
+        # Image pour le codage si pas d'événement
+        self._QLabelimageZeroEvent = (str(pictures_folder / "zero_event.png"))
 
-        # Image commune à tous les codages pour allumer/etteindre
+        # Image commune à tous les codages pour allumer/eteindre
         self._QLabelimagePower = (str(pictures_folder / "power.png"))
         self._QLabelimageExit = (str(pictures_folder / "exit.png"))
 
@@ -116,9 +118,10 @@ class Dashboard(QtWidgets.QMainWindow):
 
 ########## Positionnement des boutons:
         """ 1ere ligne"""
-        """" 
+        """ 
         Chaque image a la même structure de code, le 1er sera detaillé et les suivants sont identiques
         """
+
         ############ 1er #################
         #ajout d'une image définie à partir des lignes 64 appartenant à la classe dashboard (self) en tant que Pixmap
         scaledpixmapBienGere = QtGui.QPixmap(self._QLabelimageBiengere).scaled(self._image_size,
@@ -131,7 +134,7 @@ class Dashboard(QtWidgets.QMainWindow):
         #ajuster la taille définie plus haut dans la classe
         self.buttonGere.setIconSize(self._image_size)
         #definir le nom du bouton qui sera inscrit dans le csv
-        self.buttonGere.setObjectName("Situation_bien_gere")
+        self.buttonGere.setObjectName("Situation_bien_gérée")
         #appel d'un callback nommé "._on_click" avec paramètre suplémenataire inséré à l'aide de "functools.partial"
         self.buttonGere.mousePressEvent = functools.partial(self._on_click, name=self.buttonGere.objectName())
         #le placer a la bonne position dans le quadrillage
@@ -144,7 +147,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonMalGere = QPushButton()
         self.buttonMalGere.setIcon(QtGui.QIcon(scaledpixmapMalGere))
         self.buttonMalGere.setIconSize(self._image_size)
-        self.buttonMalGere.setObjectName("Situaution_mal_gere")
+        self.buttonMalGere.setObjectName("Situation_mal_gérée")
         self.buttonMalGere.mousePressEvent = functools.partial(self._on_click, name=self.buttonMalGere.objectName())
         layout.addWidget(self.buttonMalGere, 0, 2)
 
@@ -161,18 +164,6 @@ class Dashboard(QtWidgets.QMainWindow):
         layout.addWidget(self.buttonPower, 0, 0)
 
         ############
-        scaledpixmapExit = QtGui.QPixmap(self._QLabelimageExit).scaled(self._image_size,
-                                                                       QtCore.Qt.KeepAspectRatio,
-                                                                       QtCore.Qt.SmoothTransformation)
-        self.buttonExit = QPushButton()
-        self.buttonExit.setIcon(QtGui.QIcon(scaledpixmapExit))
-        self.buttonExit.setIconSize(self._image_size)
-        self.buttonExit.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
-        # self.buttonGere.mousePressEvent = self._on_click  # Action triggered on mouse click
-        self.buttonExit.mousePressEvent = self._shutdown
-        layout.addWidget(self.buttonExit, 0, 6)
-
-        ############
         scaledpixmapPlus = QtGui.QPixmap(self._QLabelimagePlus).scaled(self._image_size,
                                                                        QtCore.Qt.KeepAspectRatio,
                                                                        QtCore.Qt.SmoothTransformation)
@@ -181,7 +172,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonPlus.setIconSize(self._image_size)
         self.buttonPlus.setObjectName("Plus")
         self.buttonPlus.mousePressEvent = functools.partial(self._counter, name=self.buttonPlus.objectName())
-        layout.addWidget(self.buttonPlus, 0, 4)
+        layout.addWidget(self.buttonPlus, 0, 6)
 
         ############
         scaledpixmapMoins = QtGui.QPixmap(self._QLabelimageMoins).scaled(self._image_size,
@@ -192,7 +183,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonMoins.setIconSize(self._image_size)
         self.buttonMoins.setObjectName("Moins")
         self.buttonMoins.mousePressEvent = functools.partial(self._counter, name=self.buttonMoins.objectName())
-        layout.addWidget(self.buttonMoins, 0, 5)
+        layout.addWidget(self.buttonMoins, 0, 4)
 
 
         """3eme ligne"""
@@ -213,7 +204,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonVegetation = QPushButton()
         self.buttonVegetation.setIcon(QtGui.QIcon(scaledpixmapVegetation))
         self.buttonVegetation.setIconSize(self._image_size)
-        self.buttonVegetation.setObjectName("Vegetation")
+        self.buttonVegetation.setObjectName("Végétation")
         self.buttonVegetation.mousePressEvent = functools.partial(self._on_click,
                                                                   name=self.buttonVegetation.objectName())
         layout.addWidget(self.buttonVegetation, 2, 2)
@@ -226,7 +217,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonEmbouteillage = QPushButton()
         self.buttonEmbouteillage.setIcon(QtGui.QIcon(scaledpixmapEmbouteillageEnvi))
         self.buttonEmbouteillage.setIconSize(self._image_size)
-        self.buttonEmbouteillage.setObjectName("Embouteillage")
+        self.buttonEmbouteillage.setObjectName("Embouteillages")
         self.buttonEmbouteillage.mousePressEvent = functools.partial(self._on_click,
                                                                      name=self.buttonEmbouteillage.objectName())
         layout.addWidget(self.buttonEmbouteillage, 2, 3)
@@ -249,7 +240,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonIntemperies = QPushButton()
         self.buttonIntemperies.setIcon(QtGui.QIcon(scaledpixmapIntemperiesEnvi))
         self.buttonIntemperies.setIconSize(self._image_size)
-        self.buttonIntemperies.setObjectName("Intemperies")
+        self.buttonIntemperies.setObjectName("Intempéries")
         self.buttonIntemperies.mousePressEvent = functools.partial(self._on_click,
                                                                    name=self.buttonIntemperies.objectName())
         layout.addWidget(self.buttonIntemperies, 2, 1)
@@ -262,18 +253,30 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonStationnementGenant = QPushButton()
         self.buttonStationnementGenant.setIcon(QtGui.QIcon(scaledpixmapStationnementGenantEnvi))
         self.buttonStationnementGenant.setIconSize(self._image_size)
-        self.buttonStationnementGenant.setObjectName("StationnementGenant")
+        self.buttonStationnementGenant.setObjectName("Stationnement_gênant")
         self.buttonStationnementGenant.mousePressEvent = functools.partial(self._on_click,
                                                                            name=self.buttonStationnementGenant.objectName())
         layout.addWidget(self.buttonStationnementGenant, 2, 4)
 
         """ 4eme ligne"""
         ############
+        scaledpixmapExit = QtGui.QPixmap(self._QLabelimageExit).scaled(self._image_size,
+                                                                       QtCore.Qt.KeepAspectRatio,
+                                                                       QtCore.Qt.SmoothTransformation)
+        self.buttonExit = QPushButton()
+        self.buttonExit.setIcon(QtGui.QIcon(scaledpixmapExit))
+        self.buttonExit.setIconSize(self._image_size)
+        self.buttonExit.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
+        # self.buttonGere.mousePressEvent = self._on_click  # Action triggered on mouse click
+        self.buttonExit.mousePressEvent = self._shutdown
+        layout.addWidget(self.buttonExit, 3, 0)
+
+        ############
         scaledpixmapTraveePPVul = QtGui.QPixmap(self._QLabelimageTraveePPVul).scaled(self._image_size,QtCore.Qt.KeepAspectRatio,QtCore.Qt.SmoothTransformation)
         self.buttonTraveePP = QPushButton()
         self.buttonTraveePP.setIcon(QtGui.QIcon(scaledpixmapTraveePPVul))
         self.buttonTraveePP.setIconSize(self._image_size)
-        self.buttonTraveePP.setObjectName("Traversee_PP")
+        self.buttonTraveePP.setObjectName("Traversée_PP")
         self.buttonTraveePP.mousePressEvent = functools.partial(self._on_click, name=self.buttonTraveePP.objectName())
         layout.addWidget(self.buttonTraveePP, 3, 1)
 
@@ -285,7 +288,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonTraveeHorsPP = QPushButton()
         self.buttonTraveeHorsPP.setIcon(QtGui.QIcon(scaledpixmapTraveeHorsPPVul))
         self.buttonTraveeHorsPP.setIconSize(self._image_size)
-        self.buttonTraveeHorsPP.setObjectName("Traversee_hors_PP")
+        self.buttonTraveeHorsPP.setObjectName("Traversée_hors_PP")
         self.buttonTraveeHorsPP.mousePressEvent = functools.partial(self._on_click,
                                                                     name=self.buttonTraveeHorsPP.objectName())
         layout.addWidget(self.buttonTraveeHorsPP, 3, 2)
@@ -298,7 +301,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonTraverseeMasquage = QPushButton()
         self.buttonTraverseeMasquage.setIcon(QtGui.QIcon(scaledpixmapTraverseeMasquageVul))
         self.buttonTraverseeMasquage.setIconSize(self._image_size)
-        self.buttonTraverseeMasquage.setObjectName("Traversee_Masquage")
+        self.buttonTraverseeMasquage.setObjectName("Traversée_avec_masquage")
         self.buttonTraverseeMasquage.mousePressEvent = functools.partial(self._on_click,
                                                                          name=self.buttonTraverseeMasquage.objectName())
         layout.addWidget(self.buttonTraverseeMasquage, 3, 3)
@@ -311,25 +314,19 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonUsagerSortantVehicule = QPushButton()
         self.buttonUsagerSortantVehicule.setIcon(QtGui.QIcon(scaledpixmapUsagerSortantVehiculeVul))
         self.buttonUsagerSortantVehicule.setIconSize(self._image_size)
-        self.buttonUsagerSortantVehicule.setObjectName("Usager_Sortant_Vehicule")
+        self.buttonUsagerSortantVehicule.setObjectName("Usager_sortant_véhicule")
         self.buttonUsagerSortantVehicule.mousePressEvent = functools.partial(self._on_click,
                                                                              name=self.buttonUsagerSortantVehicule.objectName())
         layout.addWidget(self.buttonUsagerSortantVehicule, 3, 4)
 
-        ######################## titres colonne gauche
-        self.buttonTitreUsager = QLineEdit("Usagers vulnérables")
-        layout.addWidget(self.buttonTitreUsager, 3, 0)
-        self.buttonTitreVehicules = QLineEdit("Vehicules en mouvement")
-        layout.addWidget(self.buttonTitreVehicules, 1, 0)
-        self.buttonTitreEnvironnement = QLineEdit("Environnement")
-        layout.addWidget(self.buttonTitreEnvironnement, 2, 0)
-
         """ 2eme ligne """
+
+        ###########
         scaledpixmapRefusPrioMvt = QtGui.QPixmap(self._QLabelimageREfusPrioMvt).scaled(self._image_size,QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
         self.buttonRefusPrio = QPushButton()
         self.buttonRefusPrio.setIcon(QtGui.QIcon(scaledpixmapRefusPrioMvt))
         self.buttonRefusPrio.setIconSize(self._image_size)
-        self.buttonRefusPrio.setObjectName("Refus_rio")
+        self.buttonRefusPrio.setObjectName("Refus_de_priorité")
         self.buttonRefusPrio.mousePressEvent = functools.partial(self._on_click, name=self.buttonRefusPrio.objectName())
         layout.addWidget(self.buttonRefusPrio, 1, 6)
 
@@ -341,7 +338,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonRabat = QPushButton()
         self.buttonRabat.setIcon(QtGui.QIcon(scaledpixmapRabattementMvt))
         self.buttonRabat.setIconSize(self._image_size)
-        self.buttonRabat.setObjectName("Rabattement")
+        self.buttonRabat.setObjectName("Rabattement_proche")
         self.buttonRabat.mousePressEvent = functools.partial(self._on_click, name=self.buttonRabat.objectName())
         layout.addWidget(self.buttonRabat, 1, 2)
 
@@ -353,7 +350,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonSortieStatio = QPushButton()
         self.buttonSortieStatio.setIcon(QtGui.QIcon(scaledpixmapSortieStatioMvt))
         self.buttonSortieStatio.setIconSize(self._image_size)
-        self.buttonSortieStatio.setObjectName("Sortie_Stationnement")
+        self.buttonSortieStatio.setObjectName("Sortie_de_stationnement")
         self.buttonSortieStatio.mousePressEvent = functools.partial(self._on_click,
                                                                     name=self.buttonSortieStatio.objectName())
         layout.addWidget(self.buttonSortieStatio, 1, 1)
@@ -366,7 +363,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonRemonteeFile = QPushButton()
         self.buttonRemonteeFile.setIcon(QtGui.QIcon(scaledpixmapRemonteeFileMvt))
         self.buttonRemonteeFile.setIconSize(self._image_size)
-        self.buttonRemonteeFile.setObjectName("Remontee_file")
+        self.buttonRemonteeFile.setObjectName("Remontée_de_file")
         self.buttonRemonteeFile.mousePressEvent = functools.partial(self._on_click,
                                                                     name=self.buttonRemonteeFile.objectName())
         layout.addWidget(self.buttonRemonteeFile, 1, 3)
@@ -379,7 +376,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonNonRespectPrioRP = QPushButton()
         self.buttonNonRespectPrioRP.setIcon(QtGui.QIcon(scaledpixmapNonRespectPrioRPMvt))
         self.buttonNonRespectPrioRP.setIconSize(self._image_size)
-        self.buttonNonRespectPrioRP.setObjectName("Non_Respect_Prio")
+        self.buttonNonRespectPrioRP.setObjectName("Non_respect_de_priorité")
         self.buttonNonRespectPrioRP.mousePressEvent = functools.partial(self._on_click,
                                                                         name=self.buttonNonRespectPrioRP.objectName())
         layout.addWidget(self.buttonNonRespectPrioRP, 1, 4)
@@ -392,7 +389,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonVitesseExcessive = QPushButton()
         self.buttonVitesseExcessive.setIcon(QtGui.QIcon(scaledpixmapTVitesseExcessiveMvt))
         self.buttonVitesseExcessive.setIconSize(self._image_size)
-        self.buttonVitesseExcessive.setObjectName("Vitesse_Excessive")
+        self.buttonVitesseExcessive.setObjectName("Vitesse_excessive")
         self.buttonVitesseExcessive.mousePressEvent = functools.partial(self._on_click,
                                                                         name=self.buttonVitesseExcessive.objectName())
         layout.addWidget(self.buttonVitesseExcessive, 1, 5)
@@ -405,11 +402,23 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonRetourArr.setIcon(QtGui.QIcon(scaledpixmapRetourArr))
         self.buttonRetourArr.setIconSize(self._image_size)
         # self.buttonRetourArr.setStyleSheet(_fromUtf8("background-color: rgb(255, 255, 255);"))
-        self.buttonRetourArr.setObjectName("Erreur")
+        self.buttonRetourArr.setObjectName("taguage_supprimé")
         # self.buttonGere.mousePressEvent = self._on_click  # Action triggered on mouse click
         self.buttonRetourArr.mousePressEvent = functools.partial(self._on_click, name=self.buttonRetourArr.objectName())
         layout.addWidget(self.buttonRetourArr, 3, 6)
 
+        ############
+        scaledpixmapTZeroEvent = QtGui.QPixmap(self._QLabelimageZeroEvent).scaled(
+            self._image_size,
+            QtCore.Qt.KeepAspectRatio,
+            QtCore.Qt.SmoothTransformation)
+        self.buttonZeroEvent = QPushButton()
+        self.buttonZeroEvent.setIcon(QtGui.QIcon(scaledpixmapTZeroEvent))
+        self.buttonZeroEvent.setIconSize(self._image_size)
+        self.buttonZeroEvent.setObjectName("Zero_event")
+        self.buttonZeroEvent.mousePressEvent = functools.partial(self._on_click,
+                                                                        name=self.buttonZeroEvent.objectName())
+        layout.addWidget(self.buttonZeroEvent, 1, 0)
 
         #mettre en place toute la disposition fabriquée
         self.setLayout(layout)
@@ -439,6 +448,14 @@ class Dashboard(QtWidgets.QMainWindow):
         # ajout du bouton texte dans sa case définie
         self.layout.addWidget(self.buttonInfos, 3, 5)
 
+        # ecrit le nombre de passagers dans la case 1eme ligne 5eme colonne
+        # creation d'un type bouton pour inserer le texte dedans
+        self.buttonNbPassager = QPushButton()
+        # style du bouton texte, couleur jaune et en gras pour etre visible
+        self.buttonNbPassager.setStyleSheet('QPushButton {background-color: yellow; color: black; border: none; font: bold 19px;}')
+        # ajout du bouton texte dans sa case définie
+        self.layout.addWidget(self.buttonNbPassager, 0, 5)
+
     @QtCore.pyqtSlot()
     def _shutdown(self):
         """
@@ -459,6 +476,7 @@ class Dashboard(QtWidgets.QMainWindow):
         #envoi des données sous forme de dictionnaire:
         data = {'TC': TimeCode, 'click': "situation", 'numNavette': self.numNavette, 'donnee': name, 'nbPassagers':self.countGlobal }# Changer le numero de navette en fonction de la navette utilisée
         self._zmq_client.send(data, name)
+
         """
          #ecrit le nom des boutons dans la case 4eme ligne 6eme colonne
         #creation d'un type bouton pour inserer le texte dedans
@@ -467,13 +485,13 @@ class Dashboard(QtWidgets.QMainWindow):
 
         #inserer le texte dedans, name étant le nom du bouton passé en argument de la fonction callback
         self.buttonInfos.setText(str(name))
-        """"
+
+        """
         #style du bouton texte, couleur jaune et en gras pour etre visible
         self.buttonInfos.setStyleSheet('QPushButton {background-color: yellow; color: black; border: none; font: bold 19px;}')
         #ajout du bouton texte dans sa case définie
         self.layout.addWidget(self.buttonInfos, 3 , 5)
         """
-
 
         #le rendre visible pendant 20secondes
         self.setVisible(True)
@@ -491,7 +509,7 @@ class Dashboard(QtWidgets.QMainWindow):
         elif name  == "Moins":
             self.countGlobal = self.countGlobal - 1
 
-        self.buttonInfos.setText(str(self.countGlobal))
+        self.buttonNbPassager.setText(str(self.countGlobal))
 
         # envoi des données sous forme de dictionnaire:
         #recuperer l'heure
@@ -500,6 +518,7 @@ class Dashboard(QtWidgets.QMainWindow):
         data = {'TC': TimeCode, 'click': "passagers", 'numNavette': self.numNavette, 'donnee': name,
                 'nbPassagers': self.countGlobal}  # Changer le numero de navette en fonction de la navette utilisée
         self._zmq_client.send(data, name)
+
 
     def powerCallback(self, event):
         """
@@ -524,7 +543,7 @@ class Dashboard(QtWidgets.QMainWindow):
 
         # Création d'un dossier pour stocker les données de la journée
         nomRepertoire = formatDateFixe[0:10]
-        repertoire = r'C:\Users\rtag\Desktop\resultatsAppliOperateur_csv\sortie_' + nomRepertoire
+        repertoire = r'C:\Users\ena\Desktop\resultatsAppliOperateur_csv\sortie_' + nomRepertoire
 
         # 1 repertoire par jour, le créer s'il n'existe pas encore
         if not os.path.exists(repertoire):
@@ -542,3 +561,14 @@ class Dashboard(QtWidgets.QMainWindow):
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape:
             self._shutdown()
+
+
+"""
+                ######################## titres colonne gauche
+        self.buttonTitreUsager = QLineEdit("Usagers vulnérables")
+        layout.addWidget(self.buttonTitreUsager, 3, 0)
+        self.buttonTitreVehicules = QLineEdit("Véhicules en mouvement")
+        layout.addWidget(self.buttonTitreVehicules, 1, 0)
+        self.buttonTitreEnvironnement = QLineEdit("Environnement")
+        layout.addWidget(self.buttonTitreEnvironnement, 2, 0)
+"""
