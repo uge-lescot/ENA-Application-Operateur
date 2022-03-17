@@ -134,7 +134,7 @@ class Dashboard(QtWidgets.QMainWindow):
         #ajuster la taille définie plus haut dans la classe
         self.buttonGere.setIconSize(self._image_size)
         #definir le nom du bouton qui sera inscrit dans le csv
-        self.buttonGere.setObjectName("Situation_bien_gérée")
+        self.buttonGere.setObjectName("Bien_gérée")
         #appel d'un callback nommé "._on_click" avec paramètre suplémenataire inséré à l'aide de "functools.partial"
         self.buttonGere.mousePressEvent = functools.partial(self._on_click, name=self.buttonGere.objectName())
         #le placer a la bonne position dans le quadrillage
@@ -147,7 +147,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonMalGere = QPushButton()
         self.buttonMalGere.setIcon(QtGui.QIcon(scaledpixmapMalGere))
         self.buttonMalGere.setIconSize(self._image_size)
-        self.buttonMalGere.setObjectName("Situation_mal_gérée")
+        self.buttonMalGere.setObjectName("Mal_gérée")
         self.buttonMalGere.mousePressEvent = functools.partial(self._on_click, name=self.buttonMalGere.objectName())
         layout.addWidget(self.buttonMalGere, 0, 2)
 
@@ -253,7 +253,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonStationnementGenant = QPushButton()
         self.buttonStationnementGenant.setIcon(QtGui.QIcon(scaledpixmapStationnementGenantEnvi))
         self.buttonStationnementGenant.setIconSize(self._image_size)
-        self.buttonStationnementGenant.setObjectName("Stationnement_gênant")
+        self.buttonStationnementGenant.setObjectName("Stationnement")
         self.buttonStationnementGenant.mousePressEvent = functools.partial(self._on_click,
                                                                            name=self.buttonStationnementGenant.objectName())
         layout.addWidget(self.buttonStationnementGenant, 2, 4)
@@ -288,7 +288,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonTraveeHorsPP = QPushButton()
         self.buttonTraveeHorsPP.setIcon(QtGui.QIcon(scaledpixmapTraveeHorsPPVul))
         self.buttonTraveeHorsPP.setIconSize(self._image_size)
-        self.buttonTraveeHorsPP.setObjectName("Traversée_hors_PP")
+        self.buttonTraveeHorsPP.setObjectName("Traversée_hors")
         self.buttonTraveeHorsPP.mousePressEvent = functools.partial(self._on_click,
                                                                     name=self.buttonTraveeHorsPP.objectName())
         layout.addWidget(self.buttonTraveeHorsPP, 3, 2)
@@ -301,7 +301,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonTraverseeMasquage = QPushButton()
         self.buttonTraverseeMasquage.setIcon(QtGui.QIcon(scaledpixmapTraverseeMasquageVul))
         self.buttonTraverseeMasquage.setIconSize(self._image_size)
-        self.buttonTraverseeMasquage.setObjectName("Traversée_avec_masquage")
+        self.buttonTraverseeMasquage.setObjectName("Traversée_masque")
         self.buttonTraverseeMasquage.mousePressEvent = functools.partial(self._on_click,
                                                                          name=self.buttonTraverseeMasquage.objectName())
         layout.addWidget(self.buttonTraverseeMasquage, 3, 3)
@@ -314,7 +314,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonUsagerSortantVehicule = QPushButton()
         self.buttonUsagerSortantVehicule.setIcon(QtGui.QIcon(scaledpixmapUsagerSortantVehiculeVul))
         self.buttonUsagerSortantVehicule.setIconSize(self._image_size)
-        self.buttonUsagerSortantVehicule.setObjectName("Usager_sortant_véhicule")
+        self.buttonUsagerSortantVehicule.setObjectName("Usager_sortant")
         self.buttonUsagerSortantVehicule.mousePressEvent = functools.partial(self._on_click,
                                                                              name=self.buttonUsagerSortantVehicule.objectName())
         layout.addWidget(self.buttonUsagerSortantVehicule, 3, 4)
@@ -326,7 +326,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonRefusPrio = QPushButton()
         self.buttonRefusPrio.setIcon(QtGui.QIcon(scaledpixmapRefusPrioMvt))
         self.buttonRefusPrio.setIconSize(self._image_size)
-        self.buttonRefusPrio.setObjectName("Refus_de_priorité")
+        self.buttonRefusPrio.setObjectName("Refus_prio")
         self.buttonRefusPrio.mousePressEvent = functools.partial(self._on_click, name=self.buttonRefusPrio.objectName())
         layout.addWidget(self.buttonRefusPrio, 1, 6)
 
@@ -338,7 +338,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonRabat = QPushButton()
         self.buttonRabat.setIcon(QtGui.QIcon(scaledpixmapRabattementMvt))
         self.buttonRabat.setIconSize(self._image_size)
-        self.buttonRabat.setObjectName("Rabattement_proche")
+        self.buttonRabat.setObjectName("Rabattemt_proche")
         self.buttonRabat.mousePressEvent = functools.partial(self._on_click, name=self.buttonRabat.objectName())
         layout.addWidget(self.buttonRabat, 1, 2)
 
@@ -350,7 +350,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonSortieStatio = QPushButton()
         self.buttonSortieStatio.setIcon(QtGui.QIcon(scaledpixmapSortieStatioMvt))
         self.buttonSortieStatio.setIconSize(self._image_size)
-        self.buttonSortieStatio.setObjectName("Sortie_de_stationnement")
+        self.buttonSortieStatio.setObjectName("Sortie_parking")
         self.buttonSortieStatio.mousePressEvent = functools.partial(self._on_click,
                                                                     name=self.buttonSortieStatio.objectName())
         layout.addWidget(self.buttonSortieStatio, 1, 1)
@@ -363,7 +363,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonRemonteeFile = QPushButton()
         self.buttonRemonteeFile.setIcon(QtGui.QIcon(scaledpixmapRemonteeFileMvt))
         self.buttonRemonteeFile.setIconSize(self._image_size)
-        self.buttonRemonteeFile.setObjectName("Remontée_de_file")
+        self.buttonRemonteeFile.setObjectName("Remontée_file")
         self.buttonRemonteeFile.mousePressEvent = functools.partial(self._on_click,
                                                                     name=self.buttonRemonteeFile.objectName())
         layout.addWidget(self.buttonRemonteeFile, 1, 3)
@@ -376,7 +376,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonNonRespectPrioRP = QPushButton()
         self.buttonNonRespectPrioRP.setIcon(QtGui.QIcon(scaledpixmapNonRespectPrioRPMvt))
         self.buttonNonRespectPrioRP.setIconSize(self._image_size)
-        self.buttonNonRespectPrioRP.setObjectName("Non_respect_de_priorité")
+        self.buttonNonRespectPrioRP.setObjectName("Non_respect_prio")
         self.buttonNonRespectPrioRP.mousePressEvent = functools.partial(self._on_click,
                                                                         name=self.buttonNonRespectPrioRP.objectName())
         layout.addWidget(self.buttonNonRespectPrioRP, 1, 4)
@@ -443,8 +443,9 @@ class Dashboard(QtWidgets.QMainWindow):
         # ecrit le nom des boutons dans la case 4eme ligne 6eme colonne
         # creation d'un type bouton pour inserer le texte dedans
         self.buttonInfos = QPushButton()
+
         # style du bouton texte, couleur jaune et en gras pour etre visible
-        self.buttonInfos.setStyleSheet('QPushButton {background-color: yellow; color: black; border: none; font: bold 19px;}')
+        self.buttonInfos.setStyleSheet('QPushButton {background-color: yellow; color: black; border: none; font: bold 30px;}')
         # ajout du bouton texte dans sa case définie
         self.layout.addWidget(self.buttonInfos, 3, 5)
 
@@ -452,7 +453,7 @@ class Dashboard(QtWidgets.QMainWindow):
         # creation d'un type bouton pour inserer le texte dedans
         self.buttonNbPassager = QPushButton()
         # style du bouton texte, couleur jaune et en gras pour etre visible
-        self.buttonNbPassager.setStyleSheet('QPushButton {background-color: yellow; color: black; border: none; font: bold 19px;}')
+        self.buttonNbPassager.setStyleSheet('QPushButton {background-color: yellow; color: black; border: none; font: bold 100px;}')
         # ajout du bouton texte dans sa case définie
         self.layout.addWidget(self.buttonNbPassager, 0, 5)
 
