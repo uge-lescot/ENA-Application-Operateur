@@ -16,9 +16,7 @@ Les tags créés sont enregistrés dans un fichier csv dans un dossier avec le n
 
 
 
-Cette application reprend une application [CADisp](https://github.com/uge-lescot/CADisp) développée par Romain Derollepot, [@rderollepot](https://github.com/rderollepot)
-
-
+Cette application reprend une application [CADisp](https://github.com/uge-lescot/CADisp) développée par Bertrand Richard, [@brifsttar](https://github.com/brifsttar) et Romain Derollepot, [@rderollepot](https://github.com/rderollepot)
 
 
 
@@ -59,7 +57,7 @@ L'application ne fonctionnera que si le dossier ``C:\Users\ena\Desktop\resultats
 ## 4. Comment l'utiliser ?
 
 - Lancer le fichier : ``\CADisp\batch\launch.bat``
-- Vous arriver normalement sur cet écran :
+- Vous arrivez normalement sur cet écran :
 
 <img src=".\Image\Application_Main.png" style="zoom:50%;" />
 
@@ -84,8 +82,11 @@ Personnes ayant travaillés sur cette application :
 - Romain DEROLLEPOT, [@rderollepot](https://github.com/rderollepot)
 - Fabien MOREAU, [@fmoreau69](https://github.com/fmoreau69)
 - Cao Tri DO, [@malganis35](https://github.com/malganis35)
+- Bertrand Richard,  [@brifsttar](https://github.com/brifsttar) 
 
 
+
+Origine des icônes : https://www.flaticon.com/
 
 ## 7. Licence
 

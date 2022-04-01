@@ -67,6 +67,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self._QLabelimageRetourArr = (str(pictures_folder / "retour-arriere.png"))
         self._QLabelimagePlus = (str(pictures_folder / "plus.PNG"))
         self._QLabelimageMoins = (str(pictures_folder / "moins.PNG"))
+        self._QLabelimageIncident = (str(pictures_folder / "situation_accidentelle.png"))
 
         # Image pour le codage si pas d'événement
         self._QLabelimageZeroEvent = (str(pictures_folder / "zero_event.png"))
@@ -79,7 +80,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self._QLabelimageREfusPrioMvt = str(pictures_folder / "refus_prio_new.png")
         self._QLabelimageSortieStatioMvt = str(pictures_folder / "garage.png")
         self._QLabelimageRabattementMvt = str(pictures_folder / "no_overtaking.png")
-        self._QLabelimageRemonteeFileMvt = str(pictures_folder / "remontee_file.png")
+        self._QLabelimageDepassementProcheMvt = str(pictures_folder / "remontee_file.png")
         self._QLabelimageNonRespectPrioRPMvt = str(pictures_folder / "crossroad.png")
         self._QLabelimageVitesseExcessiveMvt = str(pictures_folder / "fast.png")
 
@@ -93,7 +94,7 @@ class Dashboard(QtWidgets.QMainWindow):
         self._QLabelimageTravauxEnvi = str(pictures_folder / "traffic-cone.png")
         self._QLabelimageIntemperiesEnvi = str(pictures_folder / "thunderstorm.png")
         self._QLabelimageVegetationEnvi = str(pictures_folder / "tree.png")
-        self._QLabelimageEmbouteillageEnvi = str(pictures_folder / "traffic.png")
+        self._QLabelimageEblouissementEnvi = str(pictures_folder / "eblouissement.png")
         self._QLabelimageStationnementGenantEnvi = str(pictures_folder / "no-car.png")
         self._QLabelimageAnimalEnvi = str(pictures_folder / "pigeon.png")
 
@@ -150,6 +151,18 @@ class Dashboard(QtWidgets.QMainWindow):
         self.buttonMalGere.setObjectName("Mal_gérée")
         self.buttonMalGere.mousePressEvent = functools.partial(self._on_click, name=self.buttonMalGere.objectName())
         layout.addWidget(self.buttonMalGere, 0, 2)
+        
+        
+        ############
+        scaledpixmapIncident = QtGui.QPixmap(self._QLabelimageIncident).scaled(self._image_size,
+                                                                             QtCore.Qt.KeepAspectRatio,
+                                                                             QtCore.Qt.SmoothTransformation)
+        self.buttonIncident = QPushButton()
+        self.buttonIncident.setIcon(QtGui.QIcon(scaledpixmapIncident))
+        self.buttonIncident.setIconSize(self._image_size)
+        self.buttonIncident.setObjectName("Incident")
+        self.buttonIncident.mousePressEvent = functools.partial(self._on_click, name=self.buttonIncident.objectName())
+        layout.addWidget(self.buttonIncident, 0, 3)
 
 
         ############
@@ -210,17 +223,17 @@ class Dashboard(QtWidgets.QMainWindow):
         layout.addWidget(self.buttonVegetation, 2, 2)
 
         ############
-        scaledpixmapEmbouteillageEnvi = QtGui.QPixmap(self._QLabelimageEmbouteillageEnvi).scaled(self._image_size,
+        scaledpixmapEblouissementEnvi = QtGui.QPixmap(self._QLabelimageEblouissementEnvi).scaled(self._image_size,
                                                                                                  QtCore.Qt.KeepAspectRatio,
                                                                                                  QtCore.Qt.SmoothTransformation)
 
-        self.buttonEmbouteillage = QPushButton()
-        self.buttonEmbouteillage.setIcon(QtGui.QIcon(scaledpixmapEmbouteillageEnvi))
-        self.buttonEmbouteillage.setIconSize(self._image_size)
-        self.buttonEmbouteillage.setObjectName("Embouteillages")
-        self.buttonEmbouteillage.mousePressEvent = functools.partial(self._on_click,
-                                                                     name=self.buttonEmbouteillage.objectName())
-        layout.addWidget(self.buttonEmbouteillage, 2, 3)
+        self.buttonEblouissement = QPushButton()
+        self.buttonEblouissement.setIcon(QtGui.QIcon(scaledpixmapEblouissementEnvi))
+        self.buttonEblouissement.setIconSize(self._image_size)
+        self.buttonEblouissement.setObjectName("Eblouissement")
+        self.buttonEblouissement.mousePressEvent = functools.partial(self._on_click,
+                                                                     name=self.buttonEblouissement.objectName())
+        layout.addWidget(self.buttonEblouissement, 2, 3)
 
         ############
         scaledpixmapTravauxEnvi = QtGui.QPixmap(self._QLabelimageTravauxEnvi).scaled(self._image_size,
@@ -356,17 +369,17 @@ class Dashboard(QtWidgets.QMainWindow):
         layout.addWidget(self.buttonSortieStatio, 1, 1)
 
         ############
-        scaledpixmapRemonteeFileMvt = QtGui.QPixmap(self._QLabelimageRemonteeFileMvt).scaled(
+        scaledpixmapDepassementProcheMvt = QtGui.QPixmap(self._QLabelimageDepassementProcheMvt).scaled(
             self._image_size,
             QtCore.Qt.KeepAspectRatio,
             QtCore.Qt.SmoothTransformation)
-        self.buttonRemonteeFile = QPushButton()
-        self.buttonRemonteeFile.setIcon(QtGui.QIcon(scaledpixmapRemonteeFileMvt))
-        self.buttonRemonteeFile.setIconSize(self._image_size)
-        self.buttonRemonteeFile.setObjectName("Remontée_file")
-        self.buttonRemonteeFile.mousePressEvent = functools.partial(self._on_click,
-                                                                    name=self.buttonRemonteeFile.objectName())
-        layout.addWidget(self.buttonRemonteeFile, 1, 3)
+        self.buttonDepassementProche = QPushButton()
+        self.buttonDepassementProche.setIcon(QtGui.QIcon(scaledpixmapDepassementProcheMvt))
+        self.buttonDepassementProche.setIconSize(self._image_size)
+        self.buttonDepassementProche.setObjectName("Depassemt_proche")
+        self.buttonDepassementProche.mousePressEvent = functools.partial(self._on_click,
+                                                                    name=self.buttonDepassementProche.objectName())
+        layout.addWidget(self.buttonDepassementProche, 1, 3)
 
         ############
         scaledpixmapNonRespectPrioRPMvt = QtGui.QPixmap(self._QLabelimageNonRespectPrioRPMvt).scaled(
