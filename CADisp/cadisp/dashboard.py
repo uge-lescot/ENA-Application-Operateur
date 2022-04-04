@@ -546,8 +546,8 @@ class Dashboard(QtWidgets.QMainWindow):
 
         #Passe les boutons au vert
         self.buttonPower.setStyleSheet(_fromUtf8('background-color: rgb(176, 242, 182);'))
-        self.buttonMalGere.setStyleSheet(_fromUtf8('background-color: rgb(176, 242, 182);'))
-        self.buttonGere.setStyleSheet(_fromUtf8('background-color: rgb(176, 242, 182);'))
+        # self.buttonMalGere.setStyleSheet(_fromUtf8('background-color: rgb(176, 242, 182);'))
+        # self.buttonGere.setStyleSheet(_fromUtf8('background-color: rgb(176, 242, 182);'))
 
         #mise au format date qui passe dans un nom de fichier
         txtDate = str(datetime.datetime.now())
