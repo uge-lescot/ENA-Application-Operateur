@@ -28,6 +28,11 @@ class Dashboard(QtWidgets.QMainWindow):
 
     Voir la documentation pour plus d'informations
     """
+    
+    """
+    Les paramètres à changer lors du changement de navette de trouvent ligne 48 avec le numéro de navette 
+    et à la ligne 566 avec l'adresse du drive'
+    """
 
     # definition de la taille de la fenetre et de la taille des marges
     __LAYOUT_MARGINS = 50  # in pixels
@@ -40,7 +45,7 @@ class Dashboard(QtWidgets.QMainWindow):
         Constructor : création d'objets vides
         """
         # paramètres à modifier en cs de besoin
-        self.numNavette = "navette1"
+        self.numNavette = "P97"
 
         # fenetre principale
         QtWidgets.QMainWindow.__init__(self)
@@ -557,20 +562,28 @@ class Dashboard(QtWidgets.QMainWindow):
 
         # Création d'un dossier pour stocker les données de la journée
         nomRepertoire = formatDateFixe[0:10]
-        repertoire = r'C:\Users\ena\Desktop\resultatsAppliOperateur_csv\sortie_' + nomRepertoire
+        localPath = r'C:\Users\ena\Desktop\resultatsAppliOperateur_csv\sortie_'
+        DrivePath = r'D:\Drive\OneDrive - ifsttar.fr\projet\ENA\data expe\data appli op\P97\sortie_'
+        repertoireLocal = localPath + nomRepertoire
+        repertoireDrive = DrivePath + nomRepertoire
 
         # 1 repertoire par jour, le créer s'il n'existe pas encore
-        if not os.path.exists(repertoire):
-            os.makedirs(repertoire)
+        if not os.path.exists(repertoireLocal):
+            os.makedirs(repertoireLocal)
+        if not os.path.exists(repertoireDrive):
+            os.makedirs(repertoireDrive)
 
         #nom du fichier csv créé
-        self.fdateName = os.path.join(repertoire, formatDateFixe + ".csv")
+        self.fdateNameLocal = os.path.join(repertoireLocal, formatDateFixe + ".csv")
+        self.fdateNameDrive = os.path.join(repertoireDrive, formatDateFixe + ".csv")
 
         #on ouvre et ecrit dans le fichier en question
-        f = open(self.fdateName, 'w')#ouverture du fichier en mode écriture "w"
+        f = open(self.fdateNameLocal, 'w')#ouverture du fichier en mode écriture "w"
+        f = open(self.fdateNameDrive, 'w')#ouverture du fichier en mode écriture "w"
 
         # transfere des données vers le deuxieme script /clients/zmq_client
-        self._zmq_client.sendFileCsvName(self.fdateName)
+        self._zmq_client.sendFileCsvName(self.fdateNameLocal)
+        self._zmq_client.sendFileCsvName(self.fdateNameDrive)
 
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape:

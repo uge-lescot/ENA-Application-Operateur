@@ -12,7 +12,7 @@ Cette application sert à tagguer des événements de roulage et à compter des 
 
 Les tags créés sont enregistrés dans un fichier csv dans un dossier avec le nom de la journée
 
-<img src=".\Image\Application_Main.png" style="zoom:50%;" />
+<img src=".\Image\Application_Main_avril_2022.png" style="zoom:50%;" />
 
 
 
@@ -59,7 +59,7 @@ L'application ne fonctionnera que si le dossier ``C:\Users\ena\Desktop\resultats
 - Lancer le fichier : ``\CADisp\batch\launch.bat``
 - Vous arrivez normalement sur cet écran :
 
-<img src=".\Image\Application_Main.png" style="zoom:50%;" />
+<img src=".\Image\Application_Main_avril_2022.png" style="zoom:50%;" />
 
 - Appuyer sur le bouton ``Démarrage`` 
 - Lorsque vous avez fini, cliquer sur le bouton ``Exit``
